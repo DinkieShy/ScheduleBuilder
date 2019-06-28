@@ -1,12 +1,12 @@
 .dayArea{
   position: relative;
   text-align: center;
-  height: 200px;
+  height: 150px;
   overflow-x: scroll;
-  background-color: grey;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  border: 1px solid black;
 }
 
 .removeEventButton{
@@ -26,10 +26,10 @@
 
 #days{
   width: 100%;
-  height: calc(100% - 200px);
+ /* height: calc(100% - 200px); */
+  z-index: -1;
   overflow-y: scroll;
 }
-
 #toolbar{
   height: 200px;
   width: 100%;
@@ -37,12 +37,13 @@
   bottom: 0;
   background-color: white;
   z-index: 2;
+  display: none;
 }
 
 .dragItem{
   width: auto;
   height: 180px;
-  background-color: lightgrey;
+  background-color: #072249;
   margin: 10px;
   box-sizing: border-box;
   border-radius: 5px;
@@ -89,14 +90,15 @@ p{
 }
 
 .dayTitle{
-  height: 170px;
   padding: 5px;
   box-sizing: border-box;
   z-index: 2;
   margin: 0;
   writing-mode: vertical-lr;
   text-orientation: upright;
-  background-color: white;
+  background-color: #072249;
+  color: white;
+
 }
 
 label{
@@ -188,4 +190,38 @@ body{
 }
 ::-webkit-scrollbar-thumb:window-inactive {
  background: lightgrey !important;
+}
+
+.container{
+    width: 1200px;
+    height: 1200px;
+    padding: 30px;
+    background-color: #333;
+}
+
+
+.showtoolbar {
+  display: block;
+  width: 80%;
+  height: 50px;
+  background-color: #072249;
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  bottom: 10px;
+  left: 10%;
+}
+.showtoolbar h1 {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+span {
+  content: "\002B";
+  color: white;
+  font-size: 30px;
+} 
+
+#mon .dayArea {
+  background-color: rgba(0,0,0,.05);
 }

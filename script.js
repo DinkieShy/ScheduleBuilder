@@ -212,3 +212,16 @@ function inIframe(){
 function reset(){
   window.location.reload();
 }
+
+
+
+/*Added code please alter if you need*/
+$(document).ready(function(){
+    $('.showtoolbar').click(function() {
+      $('.showtoolbar').css("display", "none");
+
+      $('#toolbar').css("display", "block");
+    });
+  });
+
+   
