@@ -7,7 +7,7 @@ var sat;
 var sun;
 var maxID = 0;
 
-var dragItemTemplate = `<div class="dragItem"><textarea class="newEventText" id="text${maxID}" wrap="soft" style="overflow:hidden; resize:none;"></textArea>
+var dragItemTemplate = `<div class="dragItem"><textarea class="newEventText" wrap="soft" style="overflow:hidden; resize:none;"></textArea>
 <div class="timeInput"><label style="float: left" for="startTime">Start time:</label><input style="float: right" name="startTime" type="time"></input></div>
 <div class="timeInput"><label style="float: left" for="endTime">End time:</label><input style="float: right" name="endTime" type="time"></input></div>
 </div>`;
@@ -16,6 +16,55 @@ function ScheduledEvent(desc, start, end){
   this.desc = desc;
   this.start = start;
   this.end = end;
+}
+
+function displayEvents(){
+  var days = [["mon", mon], ["tue", tue], ["wed", wed], ["thu", thu], ["fri", fri], ["sat", sat], ["sun", sun]];
+  // console.log(mon);
+  // console.log(tue);
+  // console.log(wed);
+  // console.log(thu);
+  // console.log(fri);
+  // console.log(sat);
+  // console.log(sun);
+  // console.log(days);
+  for(var i = 0; i < days.length; i++){
+    days[i][1].sort(compareTimes);
+    $(`#${days[i][0]}`)[0].innerHTML = `<h1 class="dayTitle">${days[i][0].toUpperCase()}</h1>`;
+    for(var ii = 0; ii < days[i][1].length; ii++){
+      var droppedItemHTML = `<div class="droppedItem">
+      <p>${days[i][1][ii].desc}</p>`
+      if(days[i][1][ii].start != "" && days[i][1][ii] != undefined){
+        if(days[i][1][ii].end != "" && days[i][1][ii].end != undefined){
+          droppedItemHTML += `<p class="time">${days[i][1][ii].start} - ${days[i][1][ii].end}</p>`;
+        }
+        else{
+          droppedItemHTML += `<p class="time">${days[i][1][ii].start}</p>`;
+        }
+      }
+      droppedItemHTML += `</div>`;
+      $(`#${days[i][0]}`)[0].innerHTML += droppedItemHTML;
+    }
+  }
+}
+
+function compareTimes(timeA, timeB){
+  hoursMinsA = timeA.start.split(':');
+  hoursMinsB = timeB.start.split(':');
+  if(hoursMinsA[0] < hoursMinsB[0]){
+    return -1;
+  }
+  else if(hoursMinsA[0] == hoursMinsB[0]){
+    if(hoursMinsA[1] < hoursMinsB[1]){
+      return -1;
+    }
+    else{
+      return 1;
+    }
+  }
+  else{
+    return 1;
+  }
 }
 
 function addEvent(day, desc, start, end){
@@ -63,21 +112,23 @@ $(document).ready(function(){
       if(text.trim() != ""){
         ui.draggable.draggable('disable');
         ui.draggable.removeClass("dragItem");
-        ui.draggable.addClass("droppedItem")
+        ui.draggable.addClass("droppedItem");
         ui.draggable[0].innerHTML = `<p>${text}</p>`;
-        ui.draggable[0].innerHTML += `<p class="time">${start} - ${end}</p>`;;
+        ui.draggable[0].innerHTML += `<p class="time">${start} - ${end}</p>`;
         $(this).append(ui.draggable);
-        addEvent($(this)[0].id, text, $(ui.draggable[0].children[1]).val(), $(ui.draggable[0].children[2]).val());
+        addEvent($(this)[0].id, text, start, end);
         addDragItem();
+        displayEvents();
       }
     }
   });
   addDragItem();
+  displayEvents();
 });
 
 function addDragItem(id){
   $('#toolbar').append(parseHTML(dragItemTemplate));
-  $(`#toolbar div`).draggable({
+  $(`.dragItem`).draggable({
     cursor: "move",
     revert: 'invalid',
     helper: 'clone',

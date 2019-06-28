@@ -67,9 +67,9 @@ p{
   box-sizing: border-box;
   text-align: center;
   background-color: white;
-  height: calc(60% - 20px);
-  white-space: pre-wrap;
-  overflow-y: none;
+  height: calc(100% - 54px);
+  white-space: wrap;
+  min-width: 105px;
 }
 
 .dayTitle{
@@ -81,6 +81,15 @@ p{
   writing-mode: vertical-lr;
   text-orientation: upright;
   background-color: white;
+}
+
+label{
+  padding: 3px;
+}
+
+.time{
+  height: 24px;
+  min-width: 105px;
 }
 
 .btn{
