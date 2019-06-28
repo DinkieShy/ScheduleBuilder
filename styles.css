@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  border: 1px solid black;
+  border: 1px solid white;
 }
 
 .removeEventButton{
@@ -35,7 +35,7 @@
   width: 100%;
   position: fixed;
   bottom: 0;
-  background-color: white;
+  background-color: #072249;
   z-index: 2;
   display: none;
 }
@@ -52,29 +52,28 @@
 .droppedItem{
   height: auto;
   width: auto;
-  background-color: lightgrey;
-  margin: 10px;
+  background-color: #072249;
+  margin: 1px;
   box-sizing: content-box;
-  border-radius: 5px;
   vertical-align: middle;
 }
 
 .timeInput{
-  width: calc(50% - 20px);
-  margin: 5px;
+  width: 80%;
+  margin: 15px;
   position: relative;
   float: right;
   vertical-align: middle;
+  margin-right: 10%;
+  color: white;
 }
 
 .newEventText{
-  float: left;
-  margin: 10px;
-  width: calc(50% - 20px);
-  height: calc(100% - 20px);
+  width: 80%;
+  height: 20%;
   box-sizing: border-box;
-  text-align: center;
-  vertical-align: middle;
+  margin-top: 10px;
+  margin-left: 10%;
 }
 
 p{
@@ -82,11 +81,11 @@ p{
   padding: 5px;
   box-sizing: border-box;
   text-align: center;
-  background-color: white;
   height: calc(100% - 54px);
   white-space: pre-wrap;
   min-width: 105px;
   overflow: hidden;
+  color: white;
 }
 
 .dayTitle{
