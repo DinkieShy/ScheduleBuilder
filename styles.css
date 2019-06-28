@@ -1,0 +1,166 @@
+.dayArea{
+  position: relative;
+  text-align: center;
+  height: 200px;
+  overflow-x: scroll;
+  background-color: grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+#days{
+  width: 100%;
+  height: calc(100% - 200px);
+  overflow-y: scroll;
+}
+
+#toolbar{
+  height: 200px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: white;
+  z-index: 2;
+}
+
+.dragItem{
+  width: auto;
+  height: 180px;
+  background-color: lightgrey;
+  margin: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.droppedItem{
+  height: auto;
+  width: auto;
+  background-color: lightgrey;
+  margin: 10px;
+  box-sizing: content-box;
+  border-radius: 5px;
+  vertical-align: middle;
+}
+
+.timeInput{
+  width: calc(50% - 20px);
+  margin: 5px;
+  position: relative;
+  float: right;
+  vertical-align: middle;
+}
+
+.newEventText{
+  float: left;
+  margin: 10px;
+  width: calc(50% - 20px);
+  height: calc(100% - 20px);
+  box-sizing: border-box;
+  text-align: center;
+  vertical-align: middle;
+}
+
+p{
+  margin: 10px;
+  padding: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: white;
+  height: calc(60% - 20px);
+  white-space: pre-wrap;
+  overflow-y: none;
+}
+
+.dayTitle{
+  height: 170px;
+  padding: 5px;
+  box-sizing: border-box;
+  z-index: 2;
+  margin: 0;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  background-color: white;
+}
+
+.btn{
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 0.6em 1em;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+  color: #002147;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #FFF;
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  font-size: 14px;
+  line-height: 1.42857;
+}
+
+.btn-danger{
+  color: #FFF;
+  border-color: #ED1C24;
+  background-color: #ED1C24;
+}
+
+html{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.hidden{
+  display: none;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+/* !important is needed sometimes */
+::-webkit-scrollbar {
+  width: 30px !important;
+  height: 30px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+ -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3) !important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+ background: lightgrey !important;
+ -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5) !important;
+
+}
+::-webkit-scrollbar-thumb:window-inactive {
+ background: lightgrey !important;
+}
