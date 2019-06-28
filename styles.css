@@ -9,6 +9,21 @@
   justify-content: flex-start;
 }
 
+.removeEventButton{
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  border-style: solid;
+  text-align: center;
+  vertical-align: center;
+  position: relative;
+  padding: 5px;
+  padding-top: calc(5px - 1em);
+  left: -20px;
+  background-color: #ED1C24;
+  border-color: #ED1C24;
+}
+
 #days{
   width: 100%;
   height: calc(100% - 200px);
@@ -68,8 +83,9 @@ p{
   text-align: center;
   background-color: white;
   height: calc(100% - 54px);
-  white-space: wrap;
+  white-space: pre-wrap;
   min-width: 105px;
+  overflow: hidden;
 }
 
 .dayTitle{

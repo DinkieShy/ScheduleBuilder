@@ -12,27 +12,20 @@ var dragItemTemplate = `<div class="dragItem"><textarea class="newEventText" wra
 <div class="timeInput"><label style="float: left" for="endTime">End time:</label><input style="float: right" name="endTime" type="time"></input></div>
 </div>`;
 
-function ScheduledEvent(desc, start, end){
+function ScheduledEvent(desc, start, end, id){
   this.desc = desc;
   this.start = start;
   this.end = end;
+  this.id = id;
 }
 
 function displayEvents(){
   var days = [["mon", mon], ["tue", tue], ["wed", wed], ["thu", thu], ["fri", fri], ["sat", sat], ["sun", sun]];
-  // console.log(mon);
-  // console.log(tue);
-  // console.log(wed);
-  // console.log(thu);
-  // console.log(fri);
-  // console.log(sat);
-  // console.log(sun);
-  // console.log(days);
   for(var i = 0; i < days.length; i++){
     days[i][1].sort(compareTimes);
     $(`#${days[i][0]}`)[0].innerHTML = `<h1 class="dayTitle">${days[i][0].toUpperCase()}</h1>`;
     for(var ii = 0; ii < days[i][1].length; ii++){
-      var droppedItemHTML = `<div class="droppedItem">
+      var droppedItemHTML = `<div id="event${days[i][1][ii].id}" class="droppedItem">
       <p>${days[i][1][ii].desc}</p>`
       if(days[i][1][ii].start != "" && days[i][1][ii] != undefined){
         if(days[i][1][ii].end != "" && days[i][1][ii].end != undefined){
@@ -42,7 +35,7 @@ function displayEvents(){
           droppedItemHTML += `<p class="time">${days[i][1][ii].start}</p>`;
         }
       }
-      droppedItemHTML += `</div>`;
+      droppedItemHTML += `</div><button  id="removeEvent${days[i][1][ii].id}" class="removeEventButton" onclick="removeEvent(event)">x</button>`;
       $(`#${days[i][0]}`)[0].innerHTML += droppedItemHTML;
     }
   }
@@ -70,32 +63,56 @@ function compareTimes(timeA, timeB){
 function addEvent(day, desc, start, end){
   switch(day){
     case "mon":
-      mon.push(new ScheduledEvent(desc, start, end));
+      mon.push(new ScheduledEvent(desc, start, end, maxID));
     break;
     case "tue":
-      tue.push(new ScheduledEvent(desc, start, end));
+      tue.push(new ScheduledEvent(desc, start, end, maxID));
     break;
     case "wed":
-      wed.push(new ScheduledEvent(desc, start, end));
+      wed.push(new ScheduledEvent(desc, start, end, maxID));
     break;
     case "thu":
-      thu.push(new ScheduledEvent(desc, start, end));
+      thu.push(new ScheduledEvent(desc, start, end, maxID));
     break;
     case "fri":
-      fri.push(new ScheduledEvent(desc, start, end));
+      fri.push(new ScheduledEvent(desc, start, end, maxID));
     break;
     case "sat":
-      sat.push(new ScheduledEvent(desc, start, end));
+      sat.push(new ScheduledEvent(desc, start, end, maxID));
     break;
     case "sun":
-      sun.push(new ScheduledEvent(desc, start, end));
+      sun.push(new ScheduledEvent(desc, start, end, maxID));
     break;
   }
+  maxID += 1;
   save();
+}
+
+function removeEvent(event){
+  var idToRemove = event.target.id.slice(11);
+  var days = [["mon", mon], ["tue", tue], ["wed", wed], ["thu", thu], ["fri", fri], ["sat", sat], ["sun", sun]];
+  for(var i = 0; i < days.length; i++){
+    for(var ii = 0; ii < days[i][1].length; ii++){
+      if(days[i][1][ii].id == idToRemove){
+        days[i][1].splice(ii, 1);
+        save();
+        displayEvents();
+      }
+    }
+  }
+
 }
 
 $(document).ready(function(){
   load();
+  var days = [["mon", mon], ["tue", tue], ["wed", wed], ["thu", thu], ["fri", fri], ["sat", sat], ["sun", sun]];
+  for(var i = 0; i < days.length; i++){
+    for(var ii = 0; ii < days[i][1].length; ii++){
+      if(days[i][1][ii].id > maxID){
+        maxID = days[i][1][ii].id + 1;
+      }
+    }
+  }
   $('.dayArea').droppable({
     tolerance: "pointer",
     drop: function(event, ui){
