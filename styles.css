@@ -199,7 +199,7 @@ body{
 }
 
 
-.showtoolbar {
+#showtoolbar {
   display: block;
   width: 80%;
   height: 50px;
@@ -210,7 +210,7 @@ body{
   bottom: 10px;
   left: 10%;
 }
-.showtoolbar h1 {
+#showtoolbar h1 {
   text-align: center;
   color: white;
   font-size: 20px;
