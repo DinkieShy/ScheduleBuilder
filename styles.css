@@ -2,7 +2,7 @@
   position: relative;
   text-align: center;
   height: 150px;
-  overflow-x: scroll;
+  /*overflow-x: scroll;*/
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
