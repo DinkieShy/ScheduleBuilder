@@ -9,31 +9,6 @@
   border: 1px solid white;
 }
 
-#showtoolbar {
-  display: block;
-  width: 80%;
-  height: 50px;
-  background-color: #072249;
-  position: fixed;
-  bottom: 0;
-  z-index: 2;
-  bottom: 10px;
-  left: 10%;
-}
-#showtoolbar h1 {
-  text-align: center;
-  color: white;
-  font-size: 20px;
-}
-span {
-  content: "\002B";
-  color: white;
-  font-size: 30px;
-} 
-
-#mon .dayArea {
-  background-color: rgba(0,0,0,.05);
-}
 .removeEventButton{
   width: 20px;
   height: 20px;
@@ -222,3 +197,26 @@ body{
     padding: 30px;
     background-color: #333;
 }
+
+#showtoolbartab {
+  display: block;
+  width: 80%;
+  height: 50px;
+  background-color: #072249;
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  bottom: 10px;
+  left: 10%;
+}
+#showtoolbartab h1 {
+  text-align: center;
+  color: white;
+  font-size: 20px;
+}
+span {
+  content: "\002B";
+  color: white;
+  font-size: 30px;
+} 
+
