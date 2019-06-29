@@ -222,3 +222,8 @@ span {
   font-size: 30px;
 } 
 
+.title {
+  background-color: white;
+  height: auto;
+  color: #072249;
+}

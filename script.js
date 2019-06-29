@@ -26,7 +26,7 @@ function displayEvents(){
     $(`#${days[i][0]}`)[0].innerHTML = `<h1 class="dayTitle">${days[i][0].toUpperCase()}</h1>`;
     for(var ii = 0; ii < days[i][1].length; ii++){
       var droppedItemHTML = `<div id="event${days[i][1][ii].id}" class="droppedItem">
-      <p>${days[i][1][ii].desc}</p>`
+      <p class="title">${days[i][1][ii].desc}</p>`
       if(days[i][1][ii].start != "" && days[i][1][ii] != undefined){
         if(days[i][1][ii].end != "" && days[i][1][ii].end != undefined){
           droppedItemHTML += `<p class="time">${days[i][1][ii].start} - ${days[i][1][ii].end}</p>`;
@@ -130,7 +130,7 @@ $(document).ready(function(){
         ui.draggable.draggable('disable');
         ui.draggable.removeClass("dragItem");
         ui.draggable.addClass("droppedItem");
-        ui.draggable[0].innerHTML = `<p>${text}</p>`;
+        ui.draggable[0].innerHTML = `<p class="title">${text}</p>`;
         ui.draggable[0].innerHTML += `<p class="time">${start} - ${end}</p>`;
         $(this).append(ui.draggable);
         addEvent($(this)[0].id, text, start, end);
