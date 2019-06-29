@@ -213,15 +213,9 @@ function reset(){
   window.location.reload();
 }
 
-
-
-/*Added code please alter if you need*/
-$(document).ready(function(){
-    $('#showtoolbartab').click(function() {
-      $('#showtoolbartab').css("display", "none");
-
-      $('#toolbar').css("display", "block");
-    });
-  });
+function showTheToolBar() {
+   document.getElementById("showtoolbartab").style.display="none";
+   document.getElementById("toolbar").style.display="block";
+}
 
    

@@ -190,7 +190,9 @@ body{
 ::-webkit-scrollbar-thumb:window-inactive {
  background: lightgrey !important;
 }
-
+textarea {
+    -webkit-user-select: auto;
+}
 .container{
     width: 1200px;
     height: 1200px;
