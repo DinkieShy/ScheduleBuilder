@@ -7,7 +7,7 @@ var sat;
 var sun;
 var maxID = 0;
 
-var dragItemTemplate = `<div class="dragItem"><input class="newEventText" name="newEventText" wrap="soft" style="overflow:hidden; resize:none;" type="text"></input>
+var dragItemTemplate = `<div class="dragItem"><textarea class="newEventText" name="newEventText" wrap="soft" style="overflow:hidden; resize:none;" type="text"></textarea>
 <div class="timeInput"><label style="float: left" for="startTime">Start time:</label><input style="float: right" name="startTime" type="time" placeholder="09:00"></input></div>
 <div class="timeInput"><label style="float: left" for="endTime">End time:</label><input style="float: right" name="endTime" type="time" placeholder="09:00"></input></div>
 </div>`;
