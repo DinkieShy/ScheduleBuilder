@@ -7,7 +7,7 @@ var sat;
 var sun;
 var maxID = 0;
 
-var dragItemTemplate = `<div class="dragItem"><textarea class="newEventText" name="newEventText" wrap="soft" style="overflow:hidden; resize:none;" type="text"></textarea>
+var dragItemTemplate = `<div class="dragItem"><textarea class="newEventText" name="newEventText" wrap="soft" style="overflow:hidden; resize:none;" type="text" rows="20" cols="50"></textarea>
 <div class="timeInput"><label style="float: left" for="startTime">Start time:</label><input style="float: right" name="startTime" type="time" placeholder="09:00"></input></div>
 <div class="timeInput"><label style="float: left" for="endTime">End time:</label><input style="float: right" name="endTime" type="time" placeholder="09:00"></input></div>
 </div>`;
@@ -23,7 +23,8 @@ function displayEvents(){
   var days = [["mon", mon], ["tue", tue], ["wed", wed], ["thu", thu], ["fri", fri], ["sat", sat], ["sun", sun]];
   for(var i = 0; i < days.length; i++){
     days[i][1].sort(compareTimes);
-    $(`#${days[i][0]}`)[0].innerHTML = `<h1 class="dayTitle">${days[i][0].toUpperCase()}</h1>`;
+    //$(`#${days[i][0]}`)[0].innerHTML = `<h1 class="dayTitle">${days[i][0].toUpperCase()}</h1>`;
+    $(`#${days[i][0]}`)[0].innerHTML = "";
     for(var ii = 0; ii < days[i][1].length; ii++){
       var droppedItemHTML = `<div id="event${days[i][1][ii].id}" class="droppedItem">
       <p class="title">${days[i][1][ii].desc}</p>`
