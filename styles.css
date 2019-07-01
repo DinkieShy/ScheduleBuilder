@@ -1,7 +1,7 @@
 .dayArea{
   position: relative;
   text-align: center;
-  height: 150px;
+  height: 300px;
   overflow-x: scroll;
   overflow-y: hidden;
   display: flex;
@@ -43,7 +43,7 @@
 
 .dragItem{
   width: auto;
-  height: 180px;
+  height: 280px;
   background-color: #072249;
   margin: 10px;
   box-sizing: border-box;
