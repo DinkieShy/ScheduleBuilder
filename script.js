@@ -7,9 +7,9 @@ var sat;
 var sun;
 var maxID = 0;
 
-var dragItemTemplate = `<div class="dragItem"><textarea class="newEventText" name="newEventText" wrap="soft" style="overflow:hidden; resize:none;" type="text"></textArea>
-<div class="timeInput"><label style="float: left" for="startTime">Start time:</label><input style="float: right" name="startTime" type="time"></input></div>
-<div class="timeInput"><label style="float: left" for="endTime">End time:</label><input style="float: right" name="endTime" type="time"></input></div>
+var dragItemTemplate = `<div class="dragItem"><textarea class="newEventText" name="newEventText" wrap="soft" style="overflow:hidden; resize:none;" ></textarea>
+<div class="timeInput"><label style="float: left" for="startTime">Start time:</label><input style="float: right" name="startTime" type="time" placeholder="09:00"></input></div>
+<div class="timeInput"><label style="float: left" for="endTime">End time:</label><input style="float: right" name="endTime" type="time" placeholder="09:00"></input></div>
 </div>`;
 
 function ScheduledEvent(desc, start, end, id){
