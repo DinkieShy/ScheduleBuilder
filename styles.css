@@ -37,7 +37,7 @@
 
 #days{
   width: 100%;
- /* height: calc(100% - 200px); */
+ height: calc(100% - 400px);
   z-index: -1;
   overflow-y: scroll;
 }
@@ -45,11 +45,11 @@
 #toolbar{
   height: 400px;
   width: 100%;
-  position: fixed;
   bottom: 0;
   background-color: #072249;
   z-index: 2;
-  display: none;
+  padding: 10px;
+  box-sizing: border-box;
   -webkit-touch-callout: initial ; /* iOS Safari */
     -webkit-user-select: initial ; /* Safari */
      -khtml-user-select: initial ; /* Konqueror HTML */
