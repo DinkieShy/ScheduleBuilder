@@ -39,6 +39,13 @@
   background-color: #072249;
   z-index: 2;
   display: none;
+  -webkit-touch-callout: auto !important; /* iOS Safari */
+    -webkit-user-select: auto !important; /* Safari */
+     -khtml-user-select: auto !important; /* Konqueror HTML */
+       -moz-user-select: auto !important; /* Firefox */
+        -ms-user-select: auto !important; /* Internet Explorer/Edge */
+            user-select: auto !important; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 
 .dragItem{
@@ -199,15 +206,7 @@ body{
 ::-webkit-scrollbar-thumb:window-inactive {
  background: lightgrey !important;
 }
-textarea {
-  -webkit-touch-callout: auto !important; /* iOS Safari */
-    -webkit-user-select: auto !important; /* Safari */
-     -khtml-user-select: auto !important; /* Konqueror HTML */
-       -moz-user-select: auto !important; /* Firefox */
-        -ms-user-select: auto !important; /* Internet Explorer/Edge */
-            user-select: auto !important; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
-}
+
 .container{
     width: 1200px;
     height: 1200px;
