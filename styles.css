@@ -2,7 +2,8 @@
   position: relative;
   text-align: center;
   height: 150px;
-  /*overflow-x: scroll;*/
+  overflow-x: scroll;
+  overflow-y: hidden;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -172,8 +173,8 @@ body{
 }
 /* !important is needed sometimes */
 ::-webkit-scrollbar {
-  width: 30px !important;
-  height: 30px;
+  width: 10px !important;
+  height: 10px;
 }
 
 /* Track */
@@ -191,7 +192,13 @@ body{
  background: lightgrey !important;
 }
 textarea {
-    -webkit-user-select: auto;
+  -webkit-touch-callout: auto; /* iOS Safari */
+    -webkit-user-select: auto; /* Safari */
+     -khtml-user-select: auto; /* Konqueror HTML */
+       -moz-user-select: auto; /* Firefox */
+        -ms-user-select: auto; /* Internet Explorer/Edge */
+            user-select: auto; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 .container{
     width: 1200px;
@@ -220,7 +227,7 @@ span {
   content: "\002B";
   color: white;
   font-size: 30px;
-} 
+}
 
 .title {
   background-color: white;
