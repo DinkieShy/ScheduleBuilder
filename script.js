@@ -213,6 +213,7 @@ function reset(){
   window.location.reload();
 }
 
+/* Added function */
 function showTheToolBar() {
    document.getElementById("showtoolbartab").style.display="none";
    document.getElementById("toolbar").style.display="block";
