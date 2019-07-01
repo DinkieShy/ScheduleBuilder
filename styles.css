@@ -39,12 +39,12 @@
   background-color: #072249;
   z-index: 2;
   display: none;
-  -webkit-touch-callout: auto !important; /* iOS Safari */
-    -webkit-user-select: auto !important; /* Safari */
-     -khtml-user-select: auto !important; /* Konqueror HTML */
-       -moz-user-select: auto !important; /* Firefox */
-        -ms-user-select: auto !important; /* Internet Explorer/Edge */
-            user-select: auto !important; /* Non-prefixed version, currently
+  -webkit-touch-callout: initial !important; /* iOS Safari */
+    -webkit-user-select: initial !important; /* Safari */
+     -khtml-user-select: initial !important; /* Konqueror HTML */
+       -moz-user-select: initial !important; /* Firefox */
+        -ms-user-select: initial !important; /* Internet Explorer/Edge */
+            user-select: initial !important; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
 
