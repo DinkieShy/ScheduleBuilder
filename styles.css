@@ -1,3 +1,13 @@
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
 .dayArea{
   position: relative;
   text-align: center;
@@ -31,6 +41,7 @@
   z-index: -1;
   overflow-y: scroll;
 }
+
 #toolbar{
   height: 400px;
   width: 100%;
@@ -39,12 +50,22 @@
   background-color: #072249;
   z-index: 2;
   display: none;
-  -webkit-touch-callout: initial !important; /* iOS Safari */
-    -webkit-user-select: initial !important; /* Safari */
-     -khtml-user-select: initial !important; /* Konqueror HTML */
-       -moz-user-select: initial !important; /* Firefox */
-        -ms-user-select: initial !important; /* Internet Explorer/Edge */
-            user-select: initial !important; /* Non-prefixed version, currently
+  -webkit-touch-callout: initial ; /* iOS Safari */
+    -webkit-user-select: initial ; /* Safari */
+     -khtml-user-select: initial ; /* Konqueror HTML */
+       -moz-user-select: initial ; /* Firefox */
+        -ms-user-select: initial ; /* Internet Explorer/Edge */
+            user-select: initial ; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+#toolbar textarea{
+  -webkit-touch-callout: text; /* iOS Safari */
+    -webkit-user-select: text; /* Safari */
+     -khtml-user-select: text; /* Konqueror HTML */
+       -moz-user-select: text; /* Firefox */
+        -ms-user-select: text; /* Internet Explorer/Edge */
+            user-select: text; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
 
@@ -177,15 +198,6 @@ body{
   display: none;
 }
 
-.noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
-}
 /* !important is needed sometimes */
 ::-webkit-scrollbar {
   width: 10px !important;
