@@ -91,6 +91,9 @@ p{
 
 .dayTitle{
   padding: 5px;
+  width: 75px;
+  font-size: 50px;
+  margin-right: 10px;
   box-sizing: border-box;
   z-index: 2;
   margin: 0;

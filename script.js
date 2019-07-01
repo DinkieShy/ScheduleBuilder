@@ -7,7 +7,7 @@ var sat;
 var sun;
 var maxID = 0;
 
-var dragItemTemplate = `<div class="dragItem"><textarea class="newEventText" wrap="soft" style="overflow:hidden; resize:none;"></textArea>
+var dragItemTemplate = `<div class="dragItem"><textarea class="newEventText" wrap="soft" style="overflow:hidden; resize:none;" type="text"></textArea>
 <div class="timeInput"><label style="float: left" for="startTime">Start time:</label><input style="float: right" name="startTime" type="time"></input></div>
 <div class="timeInput"><label style="float: left" for="endTime">End time:</label><input style="float: right" name="endTime" type="time"></input></div>
 </div>`;
@@ -218,5 +218,3 @@ function showTheToolBar() {
    document.getElementById("showtoolbartab").style.display="none";
    document.getElementById("toolbar").style.display="block";
 }
-
-   
