@@ -11,7 +11,7 @@
 .dayArea{
   position: relative;
   text-align: center;
-  height: 300px;
+  height: 200px;
   box-sizing: border-box;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -128,7 +128,7 @@ p{
 .dayTitle{
   padding: 5px;
   width: 75px;
-  height: 300px;
+  height: 200px;
   font-size: 50px;
   z-index: 2;
   margin: 0;
