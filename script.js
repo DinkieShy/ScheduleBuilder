@@ -120,9 +120,9 @@ $(document).ready(function(){
       ui.draggable.css({
         revert: 'invalid'
       });
-      var text = $(ui.draggable[0].firstChild).val();
-      var start = $(ui.draggable[0].children[1].lastChild).val();
-      var end = $(ui.draggable[0].children[2].lastChild).val();
+      var text = $(ui.draggable[0].children[0].firstChild).val();
+      var start = $(ui.draggable[0].children[1].firstChild.lastChild).val();
+      var end = $(ui.draggable[0].children[2].firstChild.lastChild).val();
       console.log($(ui.draggable[0].children));
       console.log(text);
       if(text.trim() != ""){
