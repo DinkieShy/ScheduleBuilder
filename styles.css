@@ -149,7 +149,10 @@ p{
 
 label{
   padding: 3px;
-  z-index: 4;
+}
+
+label input{
+  z-index: 4 !important;
 }
 
 .time{

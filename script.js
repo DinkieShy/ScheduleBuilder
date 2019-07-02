@@ -136,7 +136,8 @@ $(document).ready(function(){
         addDragItem();
         displayEvents();
       }
-    }
+    },
+    delay: 200
   });
   addDragItem();
   displayEvents();
