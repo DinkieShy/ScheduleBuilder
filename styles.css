@@ -44,7 +44,6 @@
 
 #toolbar{
   height: 20vh;
-  min-height: 200px;
   width: 100%;
   bottom: 0;
   background-color: #072249;
@@ -71,7 +70,6 @@
 
 .dragItem{
   width: auto;
-  min-height: 140px;
   height: 20vh;
   padding: 20px;
   background-color: #072249;
@@ -101,6 +99,7 @@
 .timeInput input{
   height: 40px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .newEventText{
@@ -109,6 +108,12 @@
   box-sizing: border-box;
   float: left;
   user-select: text !important;
+}
+
+.newEventText input{
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 p{
