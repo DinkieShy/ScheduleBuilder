@@ -72,6 +72,7 @@
   width: auto;
   height: 20vh;
   padding: 20px;
+  padding-top: 30px;
   background-color: #072249;
   box-sizing: border-box;
   border-radius: 5px;
@@ -107,6 +108,7 @@
   height: calc(20vh - 40px);
   box-sizing: border-box;
   float: left;
+  margin: 0;
   user-select: text !important;
 }
 
@@ -273,7 +275,6 @@ span {
     width: 100%;
     height: calc(60% - 20px);
     box-sizing: border-box;
-    margin-top: 10px;
     float: left;
   }
 
@@ -282,12 +283,38 @@ span {
     display: inline-block;
     font-size: 1em;
     width: calc(calc(100% - 65px) / 2);
-    height: calc(40% - 30px);
+    height: calc(30% - 30px);
   }
 
   .dayTitle{
     width: 50px;
     font-size: 25px;
     text-align: center;
+  }
+}
+
+@media only screen and (max-height: 900px) {
+  .newEventText{
+    height: 30px;
+  }
+
+  .dragItem{
+    padding: 10px;
+    padding-top: 15px;
+    height: 140px;
+  }
+
+  .toolbar{
+    height: 140px;
+  }
+
+  #days{
+    height: calc(100vh - 140px);
+  }
+}
+
+@media only screen and (max-height: 400px){
+  .dayArea, .dayTitle{
+    height: 140px;
   }
 }
