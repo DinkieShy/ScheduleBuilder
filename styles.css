@@ -58,16 +58,6 @@
                                   supported by Chrome and Opera */
 }
 
-#toolbar textarea{
-  -webkit-touch-callout: text; /* iOS Safari */
-    -webkit-user-select: text; /* Safari */
-     -khtml-user-select: text; /* Konqueror HTML */
-       -moz-user-select: text; /* Firefox */
-        -ms-user-select: text; /* Internet Explorer/Edge */
-            user-select: text; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
-}
-
 .dragItem{
   width: auto;
   height: 20vh;
@@ -76,6 +66,7 @@
   background-color: #072249;
   box-sizing: border-box;
   border-radius: 5px;
+  z-index: 2;
 }
 
 .droppedItem{
@@ -135,7 +126,6 @@ p{
   width: 75px;
   height:  calc(calc(100vh - 200px) / 2);
   font-size: 50px;
-  z-index: 2;
   margin: 0;
   writing-mode: vertical-lr;
   text-orientation: upright;
