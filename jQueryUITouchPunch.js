@@ -80,7 +80,8 @@
     touchHandled = true;
 
     // Track movement to determine if interaction was a click
-    self._touchMoved = false;
+    self._touchMovedTrip = 200; // this is the max interval in ms for click to register as click
+    self._touchMoved = Date.now();
 
     // Simulate the mouseover event
     simulateMouseEvent(event, 'mouseover');
@@ -102,9 +103,6 @@
     if (!touchHandled) {
       return;
     }
-
-    // Interaction was not a click
-    this._touchMoved = true;
 
     // Simulate the mousemove event
     simulateMouseEvent(event, 'mousemove');
@@ -128,8 +126,8 @@
     simulateMouseEvent(event, 'mouseout');
 
     // If the touch interaction did not move, it should trigger a click
-    if (!this._touchMoved) {
-
+    this._touchMoved = Date.now() - this._touchMoved;
+    if (this._touchMoved<this._touchMovedTrip) {
       // Simulate the click event
       simulateMouseEvent(event, 'click');
     }
