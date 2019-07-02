@@ -37,13 +37,13 @@
 
 #days{
   width: 100%;
-  height: calc(100% - 400px);
+  height: calc(100% - 320px);
   z-index: -1;
   overflow-y: scroll;
 }
 
 #toolbar{
-  height: 400px;
+  height: 320px;
   width: 100%;
   bottom: 0;
   background-color: #072249;
