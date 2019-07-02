@@ -8,8 +8,8 @@ var sun;
 var maxID = 0;
 
 var dragItemTemplate = `<div class="dragItem"><label class="newEventText" for="newEventText"><input name="newEventText" type="text"></input></label>
-<div class="timeInput"><label style="float: left" for="startTime">Start time:<input style="float: right" name="startTime" type="time" placeholder="09:00"></input></div></label>
-<div class="timeInput"><label style="float: left" for="endTime">End time:<input style="float: right" name="endTime" type="time" placeholder="09:00"></input></div></label>
+<div class="timeInput"><label style="float: left" for="startTime">Start time:<input style="float: right" name="startTime" type="time" placeholder="09:00"></input></label></div>
+<div class="timeInput"><label style="float: left" for="endTime">End time:<input style="float: right" name="endTime" type="time" placeholder="09:00"></input></label></div>
 </div>`;
 
 function ScheduledEvent(desc, start, end, id){
