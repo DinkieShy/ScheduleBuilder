@@ -11,7 +11,7 @@
 .dayArea{
   position: relative;
   text-align: center;
-  height: 200px;
+  height: calc(calc(100vh - 200px) / 3.5);
   box-sizing: border-box;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -128,7 +128,7 @@ p{
 .dayTitle{
   padding: 5px;
   width: 75px;
-  height: 200px;
+  height: calc(calc(100vh - 200px) / 3.5);
   font-size: 50px;
   z-index: 2;
   margin: 0;
@@ -276,5 +276,11 @@ span {
     font-size: 1em;
     width: calc(calc(100% - 65px) / 2);
     height: calc(40% - 30px);
+  }
+
+  .dayTitle{
+    width: 50px;
+    font-size: 25px;
+    text-align: center;
   }
 }
