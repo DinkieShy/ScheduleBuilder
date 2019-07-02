@@ -37,25 +37,26 @@
 
 #days{
   width: 100%;
-  height: calc(100% - 320px);
+  height: 80vh;
+  max-height: calc(100vh - 200px);
   z-index: -1;
   overflow-y: scroll;
 }
 
 #toolbar{
-  height: 320px;
+  height: 20%;
+  min-height: 200px;
   width: 100%;
   bottom: 0;
   background-color: #072249;
   z-index: 2;
-  padding: 10px;
-  box-sizing: border-box;
-  -webkit-touch-callout: initial ; /* iOS Safari */
-    -webkit-user-select: initial ; /* Safari */
-     -khtml-user-select: initial ; /* Konqueror HTML */
-       -moz-user-select: initial ; /* Firefox */
-        -ms-user-select: initial ; /* Internet Explorer/Edge */
-            user-select: initial ; /* Non-prefixed version, currently
+  box-sizing: content-box;
+  -webkit-touch-callout: initial; /* iOS Safari */
+    -webkit-user-select: initial; /* Safari */
+     -khtml-user-select: initial; /* Konqueror HTML */
+       -moz-user-select: initial; /* Firefox */
+        -ms-user-select: initial; /* Internet Explorer/Edge */
+            user-select: initial; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
 
@@ -71,9 +72,11 @@
 
 .dragItem{
   width: auto;
-  height: 280px;
+  min-height: 140px;
+  max-height: 20vh;
+  height: 100%;
+  padding: 20px;
   background-color: #072249;
-  margin: 10px;
   box-sizing: border-box;
   border-radius: 5px;
 }
@@ -104,9 +107,8 @@
 
 .newEventText{
   width: 70%;
-  height: 90%;
+  height: 100%;
   box-sizing: border-box;
-  margin-top: 10px;
   float: left;
 }
 
@@ -256,4 +258,22 @@ span {
   background-color: white;
   height: auto;
   color: #072249;
+}
+
+@media only screen and (max-width: 640px) , only screen and (max-height: 1200px) {
+  .newEventText{
+    width: 100%;
+    height: calc(60% - 20px);
+    box-sizing: border-box;
+    margin-top: 10px;
+    float: left;
+  }
+
+  .timeInput{
+    float: none;
+    display: inline-block;
+    font-size: 1em;
+    width: calc(calc(100% - 65px) / 2);
+    height: calc(40% - 30px);
+  }
 }
