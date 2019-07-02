@@ -144,6 +144,7 @@ p{
 
 label{
   padding: 3px;
+  z-index: 4;
 }
 
 .time{
