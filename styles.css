@@ -73,8 +73,7 @@
 .dragItem{
   width: auto;
   min-height: 140px;
-  max-height: 20vh;
-  height: 100%;
+  height: calc(calc(100vh - 200px) / 3.5);
   padding: 20px;
   padding-bottom: 40px;
   background-color: #072249;
