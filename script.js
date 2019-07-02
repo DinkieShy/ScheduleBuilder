@@ -118,8 +118,6 @@ $(document).ready(function(){
     tolerance: "pointer",
     drop: function(event, ui){
       ui.draggable.css({
-        top:'50%',
-        left:'50%',
         revert: 'invalid'
       });
       var text = $(ui.draggable[0].firstChild).val();
