@@ -28,18 +28,21 @@
    * @param {Object} event A touch event
    * @param {String} simulatedType The corresponding mouse event
    */
-  function simulateMouseEvent (event, simulatedType) {
+   function simulateMouseEvent (event, simulatedType) {
 
-    // Ignore multi-touch events
-    if (event.originalEvent.touches.length > 1) {
-      return;
-    }
+     // Ignore multi-touch events
+     if (event.originalEvent.touches.length > 1) {
+       return;
+     }
+     var touch = event.originalEvent.changedTouches[0],
+         simulatedEvent = document.createEvent('MouseEvents');
 
-    event.preventDefault();
-
-    var touch = event.originalEvent.changedTouches[0],
-        simulatedEvent = document.createEvent('MouseEvents');
-
+     //Check if element is an input or a textarea
+     if ($(touch.target).is("input") || $(touch.target).is("textarea")) {
+         event.stopPropagation();
+     } else {
+         event.preventDefault();
+     }
     // Initialize the simulated mouse event using the touch event's coordinates
     simulatedEvent.initMouseEvent(
       simulatedType,    // type
