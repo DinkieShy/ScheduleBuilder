@@ -111,6 +111,7 @@ function removeEvent(event){
 $(document).ready(function(){
   var input = parseQueryString(window.location.search.slice(1));
   completed = input.completed;
+  console.log(completed);
   load();
   var days = [["mon", mon], ["tue", tue], ["wed", wed], ["thu", thu], ["fri", fri], ["sat", sat], ["sun", sun]];
   for(var i = 0; i < days.length; i++){
