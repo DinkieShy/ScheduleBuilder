@@ -6,6 +6,7 @@ var fri;
 var sat;
 var sun;
 var maxID = 0;
+var completed = false;
 
 var dragItemTemplate = `<div class="dragItem"><label class="newEventText" for="newEventText"><input name="newEventText" type="text"></input></label>
 <div class="timeInput"><label style="float: left" for="startTime">Start time:<input style="float: right" name="startTime" type="time" placeholder="09:00"></input></label></div>
@@ -87,7 +88,7 @@ function addEvent(day, desc, start, end){
   }
   maxID += 1;
   save();
-  if(mon.length + tue.length + wed.length + thu.length + fri.length + sat.length + sun.length == 5){
+  if(mon.length + tue.length + wed.length + thu.length + fri.length + sat.length + sun.length == 5 && !completed){
     window.top.location = "http://localhost:8080/link/CompleteScheduleMaker/";
   }
 }
@@ -108,6 +109,8 @@ function removeEvent(event){
 }
 
 $(document).ready(function(){
+  var input = parseQueryString(window.location.search.slice(1));
+  completed = input.completed;
   load();
   var days = [["mon", mon], ["tue", tue], ["wed", wed], ["thu", thu], ["fri", fri], ["sat", sat], ["sun", sun]];
   for(var i = 0; i < days.length; i++){
@@ -214,4 +217,27 @@ function inIframe(){
 
 function reset(){
   window.location.reload();
+}
+
+function parseQueryString(query) {
+  //From https://stackoverflow.com/questions/979975/how-to-get-the-value-from-the-get-parameters
+  var vars = query.split("&");
+  var query_string = {};
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split("=");
+    var key = decodeURIComponent(pair[0]);
+    var value = decodeURIComponent(pair[1]);
+    // If first entry with this name
+    if (typeof query_string[key] === "undefined") {
+      query_string[key] = decodeURIComponent(value);
+      // If second entry with this name
+    } else if (typeof query_string[key] === "string") {
+      var arr = [query_string[key], decodeURIComponent(value)];
+      query_string[key] = arr;
+      // If third or later entry with this name
+    } else {
+      query_string[key].push(decodeURIComponent(value));
+    }
+  }
+  return query_string;
 }
