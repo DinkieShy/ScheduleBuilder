@@ -88,7 +88,7 @@ function addEvent(day, desc, start, end){
   }
   maxID += 1;
   save();
-  if(mon.length + tue.length + wed.length + thu.length + fri.length + sat.length + sun.length == 5 && !completed){
+  if(mon.length + tue.length + wed.length + thu.length + fri.length + sat.length + sun.length == 5 && complete == "false"){
     window.top.location = "http://localhost:8080/link/CompleteScheduleMaker/";
   }
 }
