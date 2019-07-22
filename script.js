@@ -89,7 +89,10 @@ function addEvent(day, desc, start, end){
   maxID += 1;
   save();
   if(mon.length + tue.length + wed.length + thu.length + fri.length + sat.length + sun.length == 5 && completed == "false"){
-    top.location = "COUNTDOWNTOLINCOLN://countdowntolincoln100-sandbox.mxapps.io/link/CompleteScheduleBuilder/";
+    Intent i=new Intent();
+    i.setAction(Intent.ACTION_VIEW);
+    i.setData(Uri.parse("COUNTDOWNTOLINCOLN://countdowntolincoln100-sandbox.mxapps.io/link/CompleteScheduleBuilder/"));
+    startActivity(i);
   }
 }
 
